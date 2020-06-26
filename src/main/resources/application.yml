@@ -1,0 +1,42 @@
+server:
+  port: 80
+---
+spring:
+  profiles: local
+server:
+  port: 8080
+---
+spring:
+  profiles: dev
+server:
+  port: 8081
+---
+spring:
+  profiles: real
+server:
+  port: 8082
+---
+property:
+  test:
+    name: property depth test
+propertyTest: test
+propertyTestList: a,b,c
+
+fruit:
+  list:
+    - name: banana
+      color: yellow
+    - name: apple
+      color: red
+    - name: water melon
+      color: green
+
+# h2 메모리 db를 사용하기 위한 설정
+datasource:
+  url: jdbc:h2:mem:testdb
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-test
